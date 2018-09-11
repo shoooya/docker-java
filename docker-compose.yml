@@ -1,0 +1,12 @@
+version: '3'
+services:
+  apatch:
+    image: httpd
+    ports:
+      - 9200:80
+    networks: [java]
+  tomcat:
+    image: tomcat
+    networks: [java]
+networks:
+  java:
