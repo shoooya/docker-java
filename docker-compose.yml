@@ -4,9 +4,11 @@ services:
     image: httpd
     ports:
       - 9200:80
-    networks: [java]
+    networks: [docker-java]
   tomcat:
     image: tomcat
-    networks: [java]
+    networks: [docker-java]
+    ports:
+      - 8009:8080 
 networks:
-  java:
+  docker-java:
