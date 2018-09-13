@@ -9,6 +9,9 @@ services:
     image: tomcat
     networks: [docker-java]
     ports:
-      - 8009:8080 
+      - 8009:8080
+    volumes:
+      - './app/sample.war:/usr/local/tomcat/webapps/sample.war'
+      - './app/setenv.sh:/usr/local/tomcat/bin/setenv.sh'
 networks:
   docker-java:
